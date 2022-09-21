@@ -23,7 +23,7 @@ CHALLENGE 2
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => {arr.map(value => value +1);
+const addOne = (arr) => {return arr.map(value => value + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ CHALLENGE 3
 Write a function named addQuestion that, given an array of strings, uses map to return a new array containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
 
-const addQuestion = (arr) => {arr.map(string => string + '?');
+const addQuestion = (arr) => {return arr.map(string => string + '?');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   for (const value of arr) {
-    return arr.map(value => Math.pow(value, 2));
+    return arr.map(value => Math.pow(2, value));
   }
 };
 
@@ -59,9 +59,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   const newArray2 = [];
-  arr.forEach(value => newArray2.push(Math.pow(value, 2)));
+  arr.forEach(value => newArray2.push(Math.pow(2, value)));
   return newArray2;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -69,7 +70,7 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = (arr) => {arr.map(value => Math.pow(value, 2));
+const mapTwoToThe = (arr) => {return arr.map(value => Math.pow(2, value));
 };
 
 /* ------------------------------------------------------------------------------------------------
