@@ -24,7 +24,9 @@ let starWarsPeople = [
   },
 ];
 
-const sortStarWarsCharacters = (starWarsArr) => starWarsArr.sort((a,b) => b.height - a.height);
+const sortStarWarsCharacters = (starWarsArr) => {
+  // Solution code here...
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,8 +35,7 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  arr.splice( idx, 3);
-  return arr;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +44,9 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => arr.join(' ');
+const joinArray = (arr) => {
+  // Solution code here...
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -60,9 +63,7 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  for (let i = 0; i < str.length+1; i++) {
-    result.push(str.slice(i));
-  }
+  // Solution code here...
   return result;
 };
 
@@ -74,7 +75,9 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => arr.split('');
+const wordsToCharList = (arr) => {
+  // Solution code here...
+};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,11 +123,7 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  recipe.ingredients.forEach((foodItem => {
-    let twoSpaceString = foodItem.slice(foodItem.indexOf(' ') + 1);
-    let moreThanTwoSpaces = twoSpaceString.slice(twoSpaceString.indexOf(' ') + 1);
-    result.push(moreThanTwoSpaces);
-  }));
+  // Solution code here...
   return result;
 };
 
@@ -249,7 +248,7 @@ describe('Testing challenge 1', () => {
   test('It should sort the star wars characters by height from tallest to shortest', () => {
     expect(sortStarWarsCharacters(starWarsPeople)[0]['name']).toStrictEqual('Luke Skywalker');
     expect(sortStarWarsCharacters(starWarsPeople)[2]['height']).toStrictEqual('96');
-  });
+  })
 });
 
 describe('Testing challenge 2', () => {
