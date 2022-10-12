@@ -52,8 +52,11 @@ let characters = [
   }
 ];
 
-const sortByChildren = (charArray) => charArray.sort( (a, b) => a.children.length - b.children.length);
-
+const sortByChildren = (charArray) => {
+  charArray.sort((a, b) => a.name.localeCompare(b.name));
+  charArray.sort((a, b) => a.children.length - b.children.length);
+  return charArray;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -76,7 +79,7 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => /[0-9]/.text(input);
+const isNum = (input) => /[0-9]/.test(input);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -134,8 +137,6 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  const reg = /^[o0]ct($|ober)/;
-  return reg.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
