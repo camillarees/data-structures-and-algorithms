@@ -10,26 +10,77 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
   }
 
 
   insert(value) {
-    let node = new Node(value);
-
+    let newNode = new Node(value);
     // if no head exists, we assign the new node as head and we are done
     if (!this.head) {
-      this.head = node;
+      this.head = newNode;
+      return;
+    } else {
+      // traverse the linked list and add the new node to the end
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  }
+
+  append(value) {
+    let newNode = new Node(value);
+    // if no head exists, we assign the new node as head and we are done
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    } else {
+      // traverse the linked list and add the new node to the end
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  }
+
+
+  insertBefore(value, newValue) {
+    if (this.head.value === value) {
+      this.insert(newValue);
       return;
     }
+    let current = this.head;
+    while (current) {
+      if (current.next && current.next.value === value) {
+        let newNode = new Node(newValue);
+        newNode.next = current.next;
+        current.next = newNode;
+        current = current.next.next;
+      } else {
+        current = current.next;
+      }
+    }
+  }
 
-    // traverse the linked list and add the new node to the end
+
+  insertAfter(value, newValue) {
     let current = this.head;
 
-    while (current.next) {
-      current = current.next;
+    while (current) {
+      if (current && current.value === value) {
+        let newNode = new Node(newValue);
+        newNode.next = current.next;
+        current.next = newNode;
+        current = current.next.next;
+      } else {
+        current = current.next;
+      }
     }
-    current.next = node;
   }
+
 
   // traverse a linked list and log the value of each node
   traverse() {
@@ -50,11 +101,10 @@ class LinkedList {
   }
 
 
-
-  includes(value){
+  includes(value) {
     let current = this.head;
-    while(current){
-      if(current.value === value){
+    while (current) {
+      if (current.value === value) {
         return true;
       } else {
         current = current.next;
@@ -63,10 +113,10 @@ class LinkedList {
     return false;
   }
 
-  toString(){
+  toString() {
     let string = '';
     let current = this.head;
-    while(current){
+    while (current) {
       let newString = `{ ${current.value} } -> `;
       string = string + newString;
       current = current.next;
