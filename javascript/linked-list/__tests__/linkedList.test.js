@@ -69,7 +69,79 @@ describe('Linked List', () => {
     expect(list.toString()).toEqual('{ a } -> { b } -> { c } -> null');
   });
 
+  it('successfully adds a node to the end of the linked list', () => {
+    let list = new LinkedList();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+    list.append('y');
+
+    expect(list.head.next.next.next.value).toEqual('y');
+
+  });
+
+  it('successfully adds multiple nodes to the end of a linked list', () => {
+    let list = new LinkedList();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+    list.append('y');
+
+    expect(list.head.next.next.next.value).toEqual('y');
+    list.append('z');
+    expect(list.head.next.next.next.next.value).toEqual('z');
+
+  });
+
+  it('successfully inserts a node before a node located in the middle of a linked list', () => {
+    let list = new LinkedList();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+    list.insertBefore('b', 'bb');
+
+    expect(list.head.next.value).toEqual('bb');
+    expect(list.head.next.next.value).toEqual('b');
+    expect(list.head.next.next.next.value).toEqual('c');
+
+  });
+
+  it('successfully inserts a node before the first node of a linked list', () => {
+    let list = new LinkedList();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+    list.insertBefore('a', 'cc');
+
+    expect(list.head.value).toEqual('cc');
+    expect(list.head.next.value).toEqual('a');
+  });
+
+  it('successfully inserts after a node in the middle of the linked list', () => {
+    let list = new LinkedList();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+    list.insertAfter('b', 'y');
+
+    expect(list.head.next.next.value).toEqual('y');
+    expect(list.head.next.next.next.value).toEqual('c');
+
+  });
+
+  it('successfully inserts a node after the last node of the linked list', () => {
+    let list = new LinkedList();
+    list.insert('a');
+    list.insert('b');
+    list.insert('c');
+    list.insertAfter('c', 'z');
+
+    expect(list.head.next.next.next.value).toEqual('z');
+    expect(list.head.next.next.next.next.value).toEqual(null);
+  });
+
 });
+
 
 
 
