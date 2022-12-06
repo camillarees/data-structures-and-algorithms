@@ -137,7 +137,7 @@ describe('Linked List', () => {
     list.insertAfter('c', 'z');
 
     expect(list.head.next.next.next.value).toEqual('z');
-    expect(list.head.next.next.next.next.value).toEqual(null);
+    expect(list.head.next.next.next.next).toBe(null);
   });
 
 });

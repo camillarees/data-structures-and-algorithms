@@ -10,9 +10,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
-    this.tail = null;
   }
-
 
   insert(value) {
     let newNode = new Node(value);
@@ -29,58 +27,6 @@ class LinkedList {
       current.next = newNode;
     }
   }
-
-  append(value) {
-    let newNode = new Node(value);
-    // if no head exists, we assign the new node as head and we are done
-    if (!this.head) {
-      this.head = newNode;
-      return;
-    } else {
-      // traverse the linked list and add the new node to the end
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = newNode;
-    }
-  }
-
-
-  insertBefore(value, newValue) {
-    if (this.head.value === value) {
-      this.insert(newValue);
-      return;
-    }
-    let current = this.head;
-    while (current) {
-      if (current.next && current.next.value === value) {
-        let newNode = new Node(newValue);
-        newNode.next = current.next;
-        current.next = newNode;
-        current = current.next.next;
-      } else {
-        current = current.next;
-      }
-    }
-  }
-
-
-  insertAfter(value, newValue) {
-    let current = this.head;
-
-    while (current) {
-      if (current && current.value === value) {
-        let newNode = new Node(newValue);
-        newNode.next = current.next;
-        current.next = newNode;
-        current = current.next.next;
-      } else {
-        current = current.next;
-      }
-    }
-  }
-
 
   // traverse a linked list and log the value of each node
   traverse() {
@@ -123,6 +69,59 @@ class LinkedList {
     }
     string = string + 'null';
     return string;
+  }
+
+  append(value) {
+    let newNode = new Node(value);
+    // if no head exists, we assign the new node as head and we are done
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    } else {
+      // traverse the linked list and add the new node to the end
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+  }
+
+
+  insertBefore(value, newValue) {
+    let newNode = new Node(newValue);
+    let current = this.head;
+
+    if (current.value === value) {
+      newNode.next = current;
+      this.head = newNode;
+    } else {
+      while (current) {
+        if (current.next.value === value) {
+          newNode.next = current.next;
+          current.next = newNode;
+          return;
+        } else {
+          current = current.next;
+        }
+      }
+    }
+  }
+
+
+  insertAfter(value, newValue) {
+    let newNode = new Node(newValue);
+    let current = this.head;
+
+    while (current) {
+      if (current.value === value) {
+        newNode.next = current.next;
+        current.next = newNode;
+        return;
+      } else {
+        current = current.next;
+      }
+    }
   }
 }
 
