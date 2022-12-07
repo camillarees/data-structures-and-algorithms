@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../linkedList');
+const { LinkedList, zipList } = require('../linkedList');
 
 describe('Linked List', () => {
   it('successfully instantiates an empty linked list', () => {
@@ -179,10 +179,71 @@ describe('Linked List', () => {
     list.insert('a');
     list.append('b');
     list.append('c');
+
     expect(list.kthFromEnd(1)).toEqual('b');
     expect(list.kthFromEnd(0)).toEqual('c');
   });
+
 });
+
+describe('Zipped List', () => {
+
+  it('Happy path where both lists are the same length', () => {
+    let list1 = new LinkedList();
+    let list2 = new LinkedList();
+    list1.append(1);
+    list1.append(3);
+    list1.append(2);
+    list2.append(5);
+    list2.append(9);
+    list2.append(4);
+
+    let zippedList = zipList(list1, list2);
+    expect(zippedList.count).toEqual(6);
+    expect(zippedList.head.value).toEqual(1);
+    expect(zippedList.head.next.value).toEqual(5);
+    expect(zippedList.head.next.next.value).toEqual(3);
+    expect(zippedList.head.next.next.next.value).toEqual(9);
+    expect(zippedList.head.next.next.next.next.value).toEqual(2);
+    expect(zippedList.head.next.next.next.next.next.value).toEqual(4);
+
+  });
+
+  it('Works when the lists are different lengths', () => {
+    let list1 = new LinkedList();
+    let list2 = new LinkedList();
+    list1.append(1);
+    list1.append(3);
+    list1.append(2);
+    list1.append(8);
+    list2.append(5);
+    list2.append(9);
+    list2.append(4);
+
+    let zippedList = zipList(list1, list2);
+    expect(zippedList.count).toEqual(7);
+    expect(zippedList.head.value).toEqual(1);
+    expect(zippedList.head.next.value).toEqual(5);
+    expect(zippedList.head.next.next.value).toEqual(3);
+    expect(zippedList.head.next.next.next.value).toEqual(9);
+    expect(zippedList.head.next.next.next.next.value).toEqual(2);
+    expect(zippedList.head.next.next.next.next.next.value).toEqual(4);
+    expect(zippedList.head.next.next.next.next.next.next.value).toEqual(8);
+
+
+  });
+
+  it('Returns an empty list if both linked lists are empty', () => {
+    let list1 = new LinkedList();
+    let list2 = new LinkedList();
+
+    let zippedList = zipList(list1, list2);
+    expect(zippedList.head).toBe(null);
+
+  });
+
+});
+
 
 
 
