@@ -19,7 +19,6 @@ class LinkedList {
     // if no head exists, we assign the new node as head and we are done
     if (!this.head) {
       this.head = newNode;
-      return;
     } else {
       // traverse the linked list and add the new node to the end
       let current = this.head;
@@ -28,6 +27,7 @@ class LinkedList {
       }
       current.next = newNode;
     }
+    this.count++;
   }
 
   // traverse a linked list and log the value of each node
@@ -78,7 +78,6 @@ class LinkedList {
     // if no head exists, we assign the new node as head and we are done
     if (!this.head) {
       this.head = newNode;
-      return;
     } else {
       // traverse the linked list and add the new node to the end
       let current = this.head;
@@ -87,6 +86,7 @@ class LinkedList {
       }
       current.next = newNode;
     }
+    this.count++;
   }
 
 
@@ -140,8 +140,34 @@ class LinkedList {
     }
     return current.value;
   }
+}
 
+function zipList(list1, list2) {
+  let zippedList = new LinkedList();
+  let currentList1 = list1.head;
+  let currentList2 = list2.head;
+
+  while(currentList1 && currentList2) {
+    zippedList.append(currentList1.value);
+    currentList1 = currentList1.next;
+    zippedList.append(currentList2.value);
+    currentList2 = currentList2.next;
+  }
+
+  while(currentList1){
+    zippedList.append(currentList1.value);
+    currentList1 = currentList1.next;
+  }
+
+  while(currentList2){
+    zippedList.append(currentList2.value);
+    currentList2 = currentList2.next;
+  }
+  return zippedList;
 }
 
 
-module.exports = LinkedList;
+module.exports = {
+  LinkedList,
+  zipList,
+};
