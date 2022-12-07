@@ -10,6 +10,8 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
+    this.count = 0;
   }
 
   insert(value) {
@@ -123,6 +125,23 @@ class LinkedList {
       }
     }
   }
+
+  kthFromEnd(k) {
+    if (k === 0) {
+      return this.tail.value;
+    }
+    if (k > this.count) {
+      return 'Invalid';
+    }
+    let result = this.count - k;
+    let current = this.head;
+    for (let i = 0; i < result; i++) {
+      current = current.next;
+    }
+    return current.value;
+  }
+
 }
+
 
 module.exports = LinkedList;
