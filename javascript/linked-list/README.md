@@ -7,7 +7,10 @@
 - Append
 - insertBefore
 - insertAfter
+- kthFromEnd
 
 ## Approach & Efficiency
 
 O(n)
+
+![kthFromEnd Whiteboard](code-challenge-07-whiteboard.png)
