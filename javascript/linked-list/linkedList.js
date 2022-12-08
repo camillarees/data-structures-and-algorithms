@@ -127,15 +127,12 @@ class LinkedList {
   }
 
   kthFromEnd(k) {
-    if (k === 0) {
-      return this.tail.value;
-    }
-    if (k > this.count) {
+    if (k >= this.count || k < 0) {
       return 'Invalid';
     }
     let result = this.count - k;
     let current = this.head;
-    for (let i = 0; i < result; i++) {
+    for (let i = 0; i < result -1; i++) {
       current = current.next;
     }
     return current.value;

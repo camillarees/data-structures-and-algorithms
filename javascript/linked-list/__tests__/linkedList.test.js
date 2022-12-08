@@ -171,7 +171,7 @@ describe('Linked List', () => {
     let list = new LinkedList();
     list.insert('a');
 
-    expect(list.kthFromEnd(0).toEqual(1));
+    expect(list.kthFromEnd(0)).toEqual('a');
   });
 
   it('“Happy Path” where k is not at the end, but somewhere in the middle of the linked list', () => {
@@ -181,7 +181,6 @@ describe('Linked List', () => {
     list.append('c');
 
     expect(list.kthFromEnd(1)).toEqual('b');
-    expect(list.kthFromEnd(0)).toEqual('c');
   });
 
 });
