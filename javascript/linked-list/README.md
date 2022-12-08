@@ -21,6 +21,7 @@
 
 3. Challenge 7
 - kthFromEnd
+-[PR]()
   - Return the node’s value that is k places from the tail of the linked list
 
 4. Challenge 8
@@ -28,9 +29,10 @@
 - zipList
   - Zip two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.
 
-
 ## Approach & Efficiency
 
 ![kthFromEnd Whiteboard](code-challenge-07-whiteboard.png)
 ![zipList Whiteboard](code-challenge-08-whiteboard.png)
 
+## Credit and Collaborations
+- 401n49 Code Challenge 7 Review
