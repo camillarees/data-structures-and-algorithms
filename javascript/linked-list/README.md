@@ -13,6 +13,7 @@
 
 2. Challenge 6
 - Append
+- [PR](https://github.com/camillarees/data-structures-and-algorithms/pull/18)
   - Adds a new node with the given value to the end of the list
 - insertBefore
   - adds a new node with the given new value immediately before the first node that has the value specified
@@ -21,7 +22,7 @@
 
 3. Challenge 7
 - kthFromEnd
--[PR]()
+-[PR](https://github.com/camillarees/data-structures-and-algorithms/pull/25)
   - Return the node’s value that is k places from the tail of the linked list
 
 4. Challenge 8
@@ -31,6 +32,7 @@
 
 ## Approach & Efficiency
 
+![LinkedList Whiteboard](challenge-6-whiteboard.png)
 ![kthFromEnd Whiteboard](code-challenge-07-whiteboard.png)
 ![zipList Whiteboard](code-challenge-08-whiteboard.png)
 

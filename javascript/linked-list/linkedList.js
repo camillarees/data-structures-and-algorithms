@@ -11,6 +11,7 @@ class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
+    this.previous = null;
     this.count = 0;
   }
 
@@ -162,6 +163,7 @@ function zipList(list1, list2) {
   }
   return zippedList;
 }
+
 
 
 module.exports = {
