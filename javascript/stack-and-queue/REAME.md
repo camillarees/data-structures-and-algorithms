@@ -4,7 +4,7 @@
 
 ### Stack
 
-![UML]()
+![UML](stack-whiteboard.png)
 
   - Create a Stack class that has a top property. It creates an empty Stack when instantiated.
   Methods:
@@ -21,7 +21,7 @@
 
 ### Queue
 
-![UML]()
+![UML](queue-whiteboard.png)
 
   - Create a Queue class that has a front property. It creates an empty Queue when instantiated.
   Methods:
