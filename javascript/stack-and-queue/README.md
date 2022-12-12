@@ -38,7 +38,7 @@
 
 ### Psuedo Queue
 
-![UML](./assets/Coding-Challenge-11.jpg
+![UML](./assets/psuedoqueue-whiteboard.jpg)
 Create a PseudoQueue class to implement our standard queue interface, with the following methods:
   - enqueue
     - Inserts a value into the PseudoQueue, using a first-in, first-out approach.
