@@ -4,7 +4,7 @@
 
 ### Stack
 
-![UML]()
+![UML](./assets/stack-whiteboard.png)
 
   - Create a Stack class that has a top property. It creates an empty Stack when instantiated.
   Methods:
@@ -21,7 +21,7 @@
 
 ### Queue
 
-![UML]()
+![UML](./assets/queue-whiteboard.png)
 
   - Create a Queue class that has a front property. It creates an empty Queue when instantiated.
   Methods:
@@ -36,3 +36,11 @@
     - isEmpty
       - Returns q boolean indicating whether or not the queue is empty
 
+### Psuedo Queue
+
+![UML](./assets/Coding Challenge Class 11.jpg)
+Create a PseudoQueue class to implement our standard queue interface, with the following methods:
+  - enqueue
+    - Inserts a value into the PseudoQueue, using a first-in, first-out approach.
+  - dequeue
+    - Extracts a value from the PseudoQueue, using a first-in, first-out approach.

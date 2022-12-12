@@ -2,6 +2,7 @@
 
 const Stack = require('./stack');
 const Queue = require('./queue');
+const PseudoQueue = require('./pseudoQueue');
 
 describe('Stack test', () => {
 
@@ -134,4 +135,32 @@ describe('Queue test', () => {
     expect(newQueue.peek()).toEqual('cannot peek empty queue');
   });
 
+});
+
+describe('Psuedo Queue Test', () => {
+
+  it('enqueues into pseudoqueue as expected', () => {
+    const newQueue = new PseudoQueue();
+    newQueue.enqueue(1);
+    expect(newQueue.stack1.top.value).toEqual(1);
+  });
+
+  it('returns undefined if given no value to dequeue', () => {
+    const newQueue = new PseudoQueue();
+    newQueue.enqueue();
+    expect(newQueue.stack1.top.value).toEqual(undefined);
+  });
+
+  it('dequeues from pseudoqueue as expected', () => {
+    const newQueue = new PseudoQueue();
+    newQueue.enqueue(1);
+    newQueue.enqueue(2);
+    expect(newQueue.stack1.top.value).toEqual(2);
+    expect(newQueue.dequeue()).toEqual(1);
+  });
+
+  it('returns an error message if the pseudoqueue is empty', () => {
+    const newQueue = new PseudoQueue();
+    expect(newQueue.dequeue()).toEqual('cannot dequeue from empty pseudoqueue');
+  });
 });
