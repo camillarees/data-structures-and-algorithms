@@ -44,3 +44,15 @@ Create a PseudoQueue class to implement our standard queue interface, with the f
     - Inserts a value into the PseudoQueue, using a first-in, first-out approach.
   - dequeue
     - Extracts a value from the PseudoQueue, using a first-in, first-out approach.
+
+### Animal Shelter
+
+![UML](./assets/code-challenge-12.png)
+
+- Create a class called AnimalShelter which holds only dogs and cats.
+- Methods:
+  - enqueue
+    - adds an animal (either dog or cat) to the AnimalShelter queue
+  - dequeue
+    - returns either a dog or a cat, based on preference.
+    - If pref is not "dog" or "cat" then return null.

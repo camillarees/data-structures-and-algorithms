@@ -1,8 +1,8 @@
 'use strict';
 
-const Stack = require('./stack');
-const Queue = require('./queue');
-const PseudoQueue = require('./pseudoQueue');
+const Stack = require('../stack');
+const Queue = require('../queue');
+const PseudoQueue = require('../pseudoQueue');
 
 describe('Stack test', () => {
 
