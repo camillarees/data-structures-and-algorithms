@@ -56,3 +56,11 @@ Create a PseudoQueue class to implement our standard queue interface, with the f
   - dequeue
     - returns either a dog or a cat, based on preference.
     - If pref is not "dog" or "cat" then return null.
+
+### Brackets
+
+![UML](./assets/code-challenge-13.png)
+
+- Write a function that validates if the brackets in a string are balanced
+
+

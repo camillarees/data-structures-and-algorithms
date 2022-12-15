@@ -54,10 +54,9 @@ describe('Animal Shelter Queue', () => {
 
   it('should throw an exception if the animal type to dequeue is not a cat or dog', () => {
     const animalShelter = new AnimalShelter;
-    animalShelter.enqueue('dog');
-    animalShelter.enqueue('cat');
     animalShelter.enqueue('bird');
-    animalShelter.dequeue();
+    animalShelter.enqueue('cat');
+    animalShelter.enqueue('dog');
     expect(animalShelter.dequeue()).toEqual('no animals of that preferece');
 
   });

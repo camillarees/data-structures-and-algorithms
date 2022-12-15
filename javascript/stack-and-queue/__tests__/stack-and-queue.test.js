@@ -3,6 +3,7 @@
 const Stack = require('../stack');
 const Queue = require('../queue');
 const PseudoQueue = require('../pseudoQueue');
+const validateBrackets = require('../stack');
 
 describe('Stack test', () => {
 
@@ -162,5 +163,27 @@ describe('Psuedo Queue Test', () => {
   it('returns an error message if the pseudoqueue is empty', () => {
     const newQueue = new PseudoQueue();
     expect(newQueue.dequeue()).toEqual('cannot dequeue from empty pseudoqueue');
+
   });
+
+  describe('Brackets Test', () => {
+
+    it('returns true if bracket notation is balanced', () => {
+      let string = '(){}[]';
+      expect(validateBrackets(string)).toBe(true);
+    });
+
+    it('returns false if bracket notation is not balanced', () => {
+      let string = '({()[()]';
+      expect(validateBrackets(string)).toBe(false);
+    });
+
+    it('returns an error messge if string is empty', () => {
+      let string = ' ';
+      expect(validateBrackets(string)).toEqual('invalid string');
+    });
+
+  });
+
 });
+

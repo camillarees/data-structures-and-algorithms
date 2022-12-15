@@ -31,6 +31,7 @@ class AnimalShelter {
     }
   }
 
+
   dequeue(pref) {
 
     if (!this.front) {
