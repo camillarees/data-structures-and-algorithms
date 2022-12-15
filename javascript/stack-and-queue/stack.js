@@ -48,4 +48,22 @@ module.exports = class Stack {
     return this.top === null;
   }
 
+  validateBrackets(string) {
+    let validCharacters = ['()', '{}', '[]'];
+    let stack = new Stack;
+
+    for(let char of string) {
+      let characterIndex = validCharacters.indexOf(char);
+      if(characterIndex % 2 === 0){
+        stack.push(characterIndex + 1);
+
+      } else {
+        if(stack.pop() !== characterIndex){
+          return false;
+        }
+      }
+      return true;
+    }
+  }
+
 };
