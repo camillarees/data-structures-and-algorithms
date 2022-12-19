@@ -60,8 +60,32 @@ class BinaryTree {
     traverse(this.root);
     return array;
   }
-}
 
+  maxValue() {
+
+    if(!this.root) {
+      return 'cannot find max value in empty tree';
+    }
+
+    let temp = new Node(this.root.value);
+
+    const traverse = (node) => {
+      if(node.value > temp.value) {
+        temp.value = node.value;
+      }
+      if(node.left) {
+        traverse(node.left);
+      }
+      if(node.right) {
+        traverse(node.right);
+      }
+    };
+
+    traverse(this.root);
+    return temp.value;
+  }
+
+}
 
 class BinarySearchTree extends BinaryTree {
 

@@ -4,16 +4,21 @@
 
 ### Binary Tree BST Implementation
 
-![UML]()
+![UML CC 15]()
+![UML CC 16]('./assets/CC-16.png')
 
 ### Binary Tree
 - Create a Binary Tree class
 - Depth first traversals:
-  - Pre order
-  - In order
-  - Post order
+  - preOrder
+  - inOrder
+  - portOrder
 
 Each depth first traversal method should return an array of values, ordered appropriately.
+
+- findMax
+  - Write a maxValue method for the BinaryTree class that returns a number representing the maximum value in the tree.
+
 
 ### Binary Search Tree
 - Create a Binary Search Tree class
@@ -22,3 +27,6 @@ Each depth first traversal method should return an array of values, ordered appr
     - Adds a new node with that value in the correct location in the binary search tree.
   - Contains
     - Takes in a value and return a boolean indicating whether or not the value is in the tree at least once.
+
+## Credits and Collaborations
+Partners: Jacob Dang
