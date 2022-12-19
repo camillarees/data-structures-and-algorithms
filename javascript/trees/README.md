@@ -4,7 +4,7 @@
 
 ### Binary Tree BST Implementation
 
-![UML]('./assets/CC-16.png')
+![UML]('../assets/CC-16.png')
 
 ### Binary Tree
 - Create a Binary Tree class
