@@ -1,7 +1,7 @@
 'use strict';
 
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.left = null;
     this.right = null;
@@ -9,17 +9,17 @@ class Node {
 }
 
 class BinaryTree {
-  constructor(){
+  constructor() {
     this.root = null;
   }
 
-  preOrder(){
+  preOrder() {
     let array = [];
     let traverse = (node) => {
       array.push(node.value);
-      if(node.left){
+      if (node.left) {
         traverse(node.left);
-        if(node.right){
+        if (node.right) {
           traverse(node.right);
         }
       }
@@ -32,10 +32,10 @@ class BinaryTree {
   inOrder() {
     let array = [];
     let traverse = (node) => {
-      if(node.left){
-        traverse(node.left);{
+      if (node.left) {
+        traverse(node.left); {
           array.push(node.value);
-          if(node.right){
+          if (node.right) {
             traverse(node.right);
           }
         }
@@ -46,12 +46,12 @@ class BinaryTree {
   }
 
 
-  postOrder(){
+  postOrder() {
     let array = [];
     let traverse = (node) => {
-      if(node.left){
+      if (node.left) {
         traverse(node.left);
-        if(node.right){
+        if (node.right) {
           traverse(node.right);
           array.push(node.value);
         }
@@ -63,20 +63,20 @@ class BinaryTree {
 
   maxValue() {
 
-    if(!this.root) {
+    if (!this.root) {
       return 'cannot find max value in empty tree';
     }
 
     let temp = new Node(this.root.value);
 
     const traverse = (node) => {
-      if(node.value > temp.value) {
+      if (node.value > temp.value) {
         temp.value = node.value;
       }
-      if(node.left) {
+      if (node.left) {
         traverse(node.left);
       }
-      if(node.right) {
+      if (node.right) {
         traverse(node.right);
       }
     };
@@ -85,20 +85,38 @@ class BinaryTree {
     return temp.value;
   }
 
+
+  traverseTree() {
+    if (!this.root) return [];
+    const queue = [this.root];
+    const result = [];
+    while (queue.length > 0) {
+      let current = queue.shift();
+      result.push(current.value);
+      if (current.left) {
+        queue.push(current.left);
+      }
+      if (current.right) {
+        queue.push(current.right);
+      }
+    }
+    console.log(result);
+    return result;
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
 
 
-  add(value){
-    if(!this.root){
+  add(value) {
+    if (!this.root) {
       this.root = new Node(value);
       return;
     }
     let current = this.root;
-    while(current){
-      if(current.value > value){
-        if(current.left){
+    while (current) {
+      if (current.value > value) {
+        if (current.left) {
           current = current.left;
         } else {
           current.left = new Node(value);
@@ -111,20 +129,20 @@ class BinarySearchTree extends BinaryTree {
     }
   }
 
-  contains(value){
+  contains(value) {
     let current = this.root;
-    while(current){
-      if(current.value === value){
+    while (current) {
+      if (current.value === value) {
         return true;
       }
-      if(current.value > value){
-        if(current.left){
+      if (current.value > value) {
+        if (current.left) {
           current = current.left;
         } else {
           return false;
         }
       } else {
-        if(current.right){
+        if (current.right) {
           current = current.right;
         } else {
           return false;
