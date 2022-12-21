@@ -4,6 +4,7 @@
 
 ### Binary Tree BST Implementation
 
+![UML](./assets/code-challenge-17.png)
 ![UML](./assets/CC-16.png)
 
 ### Binary Tree
@@ -18,6 +19,10 @@ Each depth first traversal method should return an array of values, ordered appr
 - findMax
   - Write a maxValue method for the BinaryTree class that returns a number representing the maximum value in the tree.
 
+- Breadth first traversals:
+  - Traverse an input tree using a Breadth-first approach
+  - Write a function called breadth first that returns a list of all values in the tree, in the order they were encountered
+
 
 ### Binary Search Tree
 - Create a Binary Search Tree class
@@ -28,4 +33,4 @@ Each depth first traversal method should return an array of values, ordered appr
     - Takes in a value and return a boolean indicating whether or not the value is in the tree at least once.
 
 ## Credits and Collaborations
-Partners: Jacob Dang
+Partners: [Jacob Dang](), [Raphael Chookagian ]()

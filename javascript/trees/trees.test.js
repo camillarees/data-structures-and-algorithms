@@ -112,4 +112,35 @@ describe('Trees', () => {
     expect(tree.maxValue()).toEqual('cannot find max value in empty tree');
   });
 
+  it('Breadth first search returns values in order as expected', () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(2);
+    tree.root.left = new Node(1);
+    tree.root.right = new Node(4);
+    tree.root.left.left = new Node(3);
+    tree.root.left.right = new Node(5);
+    tree.root.right.right = new Node(6);
+    // console.log(tree);
+    expect(tree.traverseTree()).toEqual([2, 1, 4, 3, 5, 6]);
+  });
+
+  it('Returns an empty array if tree is empty', () => {
+    let tree = new BinaryTree();
+
+    expect(tree.traverseTree()).toEqual([]);
+  });
+
+  it('Breadth first search returns values in order as expected, even with multiple nodes at the same breadth level', () => {
+    let tree = new BinaryTree();
+    tree.root = new Node(2);
+    tree.root.left = new Node(1);
+    tree.root.right = new Node(4);
+    tree.root.left.left = new Node(3);
+    tree.root.left.right = new Node(5);
+    tree.root.right.left = new Node(7);
+    tree.root.right.right = new Node(6);
+
+    expect(tree.traverseTree()).toEqual([2, 1, 4, 3, 5, 7, 6]);
+  });
+
 });
