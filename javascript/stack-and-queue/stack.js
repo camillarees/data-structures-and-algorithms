@@ -48,22 +48,25 @@ module.exports = class Stack {
     return this.top === null;
   }
 
-  validateBrackets(string) {
-    let validCharacters = ['()', '{}', '[]'];
+  function validateBrackets(string) {
     let stack = new Stack;
-
+  balancedBrackets = "{ }", "[]", "()"
+  closers = "]," "}", " )';
     for(let char of string) {
-      let characterIndex = validCharacters.indexOf(char);
-      if(characterIndex % 2 === 0){
-        stack.push(characterIndex + 1);
+    If (string[0] === closers){
+    return false;
+    if(string[i] === "[" "{" "("){
+    stack.push(string[i])
+    if(string[i] === closers){
+    stack.peek()
+    if(string[i] && stack.top.value !== balancedBrackets){
+  return false;
+    } else {
+    return true
+   }
 
-      } else {
-        if(stack.pop() !== characterIndex){
-          return false;
-        }
-      }
-      return true;
-    }
   }
 
+  }
+  }
 };
