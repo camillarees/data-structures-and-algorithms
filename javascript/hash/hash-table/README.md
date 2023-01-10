@@ -33,5 +33,9 @@ Implement a Hashtable Class with the following methods:
 
 ![UML](./assets/cc-31.png)
 
+7. treeIntersection function
+
+![UML2](./assets/cc32.png)
+
 ## Credits and Collaborations
 - Partnered with [Kenny Lino]()
