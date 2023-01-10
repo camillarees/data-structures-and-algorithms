@@ -39,3 +39,4 @@ Implement a Hashtable Class with the following methods:
 
 ## Credits and Collaborations
 - Partnered with [Kenny Lino]()
+- Partnered with [Julian Barker]()
