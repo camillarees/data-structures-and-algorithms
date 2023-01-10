@@ -27,5 +27,11 @@ Implement a Hashtable Class with the following methods:
   - Arguments: key
   - Returns: Index in the collection for that key
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+6. repeatedWord function implementing HashTable functions
+  - Arguments: string
+  - Returns: string of the first word in the input string that occurs more than once.
+
+![UML](./assets/cc-31.png)
+
+## Credits and Collaborations
+- Partnered with [Kenny Lino]()
