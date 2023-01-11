@@ -2,6 +2,7 @@
 
 const HashTable = require('../hashtable.js');
 const repeatedWord = require('./hash-repeated-word');
+const leftJoin = require('.../leftJoin-hashtable');
 
 describe('Hash table test', () => {
   let table = new HashTable(1024);
@@ -76,6 +77,45 @@ describe('repeatedWord function test', () => {
 
   test('returns null if the input is null', () => {
     expect(repeatedWord('')).toBe('null');
+  });
+
+  describe('leftJoin function test', () => {
+
+    test('the right hashtable values join the matching left hashtables key as expected', () => {
+      let table1 = new HashTable(50);
+      let table2 = new HashTable(50);
+      table1.set('fond', 'enamored');
+      table1.set('wrath', 'anger');
+      table1.set('outfit', 'garb');
+      table2.set('fond', 'averse');
+      table2.set('wrath', 'delight');
+      table2.set('flow', 'jam');
+
+      let results = leftJoin(table1, table2);
+      expect(results.length).toBe(2);
+
+    });
+
+    test('if there are no matches, it returns the left hashtable as it was', () => {
+      let table1 = new HashTable(50);
+      let table2 = new HashTable(50);
+      table1.set('fond', 'enamored');
+      table1.set('wrath', 'anger');
+      table1.set('outfit', 'garb');
+
+      let results = leftJoin(table1, table2);
+
+      expect(results.length).toBe(3);
+    });
+
+    test('if both parameters are null, returns an error message', () => {
+      let table1 = new HashTable(50);
+      let table2 = new HashTable(50);
+
+      let results = leftJoin(table1, table2);
+
+      expect(results).toStrictEqual('no values to output');
+    });
   });
 });
 

@@ -37,6 +37,11 @@ Implement a Hashtable Class with the following methods:
 
 ![UML2](./assets/cc32.png)
 
+8. leftJoin hash table function
+
+![UML3](./assets/cc32.png)
+
 ## Credits and Collaborations
 - Partnered with [Kenny Lino]()
 - Partnered with [Julian Barker]()
+- Partnered with [Mandela Steele-Dadzie]()
