@@ -57,7 +57,7 @@ class HashTable {
       if(this.bucket) {
         let current = bucket.head;
         while(current) {
-          keys.append(Object.kays(current.value)[0]);
+          keys.append(Object.keys(current.value)[0]);
           current = current.next;
         }
       }
