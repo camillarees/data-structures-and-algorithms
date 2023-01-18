@@ -6,3 +6,6 @@
 
 - reverse function that takes in a list, reverses it, and returns the list with values in reversed order
 ![reverse-whiteboard](./assets/reverse-list-whiteboard.png)
+
+- removeNode function that takes in a list and key that represents the node position in the list, removes the node, and returns the update list
+![remove-whitebaord](.assets/remove-node.png)

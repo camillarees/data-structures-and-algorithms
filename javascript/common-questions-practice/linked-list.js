@@ -26,9 +26,25 @@ class LinkedListTest {
     current.next = node;
   }
 
-  // removeNode(){
+  removeNode(key) {
+    let current = this.head;
+    if (!current) {
+      return;
+    }
+    if (key === 0) {
+      this.head = current.next;
+      return;
+    }
+    for (let i = 0; current && i < key - 1; i++) {
+      if (!current || !current) {
+        return;
+      }
+      let next = current.next.next;
+      current.next = next;
+    }
+    return;
+  }
 
-  // }
 
   findMidpoint() {
     let slowPointer = this.head;

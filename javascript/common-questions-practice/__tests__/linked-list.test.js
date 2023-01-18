@@ -55,4 +55,34 @@ describe('Linked List Tests', () => {
     expect(list.head.value).toBe(1);
   });
 
+  it('returns list with removed node as expected', () => {
+    let list = new LinkedListTest();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.removeNode(3);
+
+    expect(list.head.value).toBe(1);
+    expect(list.head.next.value).toBe(2);
+  });
+
+  it('returns null if linked list is null', () => {
+    let list = new LinkedListTest();
+    list.removeNode();
+
+    expect(list.head.value).toBe(null);
+  });
+
+  it('returns the the list the same if the key position does not exist or match a linked list position', () => {
+    let list = new LinkedListTest();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+    list.removeNode(4);
+
+    expect(list.head.value).toBe(1);
+    expect(list.head.next.value).toBe(2);
+    expect(list.head.next.next.value).toBe(3);
+  });
+
 });
