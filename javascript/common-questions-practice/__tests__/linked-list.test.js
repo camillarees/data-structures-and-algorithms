@@ -85,4 +85,27 @@ describe('Linked List Tests', () => {
     expect(list.head.next.next.value).toBe(3);
   });
 
+  it('counts nodes in linked list as expected', () => {
+    let list = new LinkedListTest();
+    list.add(1);
+    list.add(2);
+    list.add(3);
+
+    expect(list.getLength().toBe(3));
+  });
+
+  it('returns 0 if head does not exist', () => {
+    let list = new LinkedListTest();
+
+    expect(list.getLength().toBe(0));
+  });
+
+  it('works with negative integers as values', () => {
+    let list = new LinkedListTest();
+    list.add(-1);
+    list.add(-2);
+    list.add(-3);
+
+    expect(list.getLength().toBe(3));
+  });
 });

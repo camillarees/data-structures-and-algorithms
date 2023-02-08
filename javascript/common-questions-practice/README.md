@@ -9,3 +9,6 @@
 
 - removeNode function that takes in a list and key that represents the node position in the list, removes the node, and returns the update list
 ![remove-whitebaord](.assets/remove-node.png)
+
+- getLength that counts the number of nodes in a given singly linked list
+![getLength-whitebaord](.assets/get-length-whiteboard.png)

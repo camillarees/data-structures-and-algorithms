@@ -71,6 +71,17 @@ class LinkedListTest {
     return list;
   }
 
+  findLengthRec(node){
+    if(!node){
+      return 0;
+    }
+    return 1 + this.findLengthRec(node.next);
+  }
+
+  findLength() {
+    return this.findLengthRec(this.head);
+  }
+
 }
 
 module.exports = LinkedListTest;
