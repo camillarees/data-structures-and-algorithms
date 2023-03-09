@@ -46,6 +46,5 @@ class Node:
         string += f" None "
         return string
 
-
 class TargetError:
     pass
